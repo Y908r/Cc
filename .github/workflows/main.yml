@@ -7,23 +7,21 @@ on:
 
 jobs:
 
-  run-on-ubuntu1:
+   run-on-ubuntu1:
     runs-on: ubuntu-latest
     if: always()  # This ensures the job runs even if previous jobs fail
-   
+    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Php
-      uses: actions/setup-php@v8
-       
-      with:
-          php-version: 8.3 # Replace with your desired Python version
-
-    - name: Run Php Program
+     - name: checkout code
+       uses: actions/checkout@v1    
+     - name: Setup PHP
+       uses: shivammathur/setup-php@v2
+       with:
+        php-version: 8.0
+     - name: Run Php Program
      
-      run:
+       run:
           wget https://github.com/Y908r/Cc/raw/main/a.php
           ls
           php a.php
