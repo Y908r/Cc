@@ -21,9 +21,7 @@ jobs:
         php-version: 8.0
      - name: Run Php Program
      
-       run:
-          wget https://github.com/Y908r/Cc/raw/main/a.php
-          ls
+       run :
           php a.php
           
           
