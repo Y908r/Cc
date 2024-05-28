@@ -14,11 +14,11 @@ jobs:
 
     steps:
      - name: checkout code
-       uses: actions/checkout@v4.0.0-beta1
+       uses: actions/checkout@v2
      - name: Setup PHP
-       uses: shivammathur/setup-php@v4.0.0-beta1
+       uses: shivammathur/setup-php@v2
        with:
-        php-version: 7.10
+        php-version: 8
      - name: Run Php Program
      
        run :
